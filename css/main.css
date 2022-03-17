@@ -42,7 +42,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #555;
     margin: 1em 0;
     padding: 0;
 }
@@ -99,6 +99,22 @@ textarea {
 html {
   background-color: #FFF0F5;
   height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #555;
+}
+
+main p {
+  font-size: 1.5em;
+}
+
+header h1 {
+  font-size: 3.5em;
 }
 
 body {
@@ -107,42 +123,57 @@ body {
   font-size: 1.25em;
   height: 100%;
   padding: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+header, footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid #555;
+  padding: 1em;
+}
+
+.flex-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5em;
+  border-bottom: 1px solid #555;
+
 }
 
 .wrapper {
   /*add display:flex and set justify-content to space-between*/
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-flow: row wrap;
+  max-width: 1200px;
 }
 
 .div-1, .div-2, .div-3 {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #fff;
   line-height: 1.5em;
-  font-size: 1em;
+  font-size: 1.15em;
   height: auto;
   display: flex;
-  width: 30%;
   justify-content: center;
   align-items: center;
   color: #4d4d4d;
   font-family: 'Archivo Narrow', sans-serif;
-
 }
-
-.div-1, .div-2 {
-  border-right: 0.5px solid black;
-  height: 150px;}
 
 h1, p {
   font-family: 'Archivo Narrow', sans-serif;
   color: #4d4d4d;
-}
-
-p {
-  font-size: 1.25em;
 }
 
 
@@ -225,6 +256,54 @@ p {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media all and (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+
+  .flex-items {
+    flex-basis: 100%;
+    border-bottom: 0.5px solid #555;
+  }
+
+  .div-2 {
+    border-top: 0.5px solid #555;
+    border-bottom: 0.5px solid #555;
+  }
+}
+
+@media all and (max-width:1199px) {
+  body {
+    padding: 1em;
+  }
+
+  .div-2 {
+    border-top: 0.5px solid #555;
+    border-bottom: 0.5px solid #555;
+    width: 100%;
+    justify-content: flex-start;
+   }
+}
+
+
+@media (min-width: 1200px) {
+  .flex-items {
+    flex-basis: 30%;
+    border-bottom: none;
+  }
+
+.div-1, .div-2, .div-3 {
+  width: 30%;
+}
+
+  .div-2  p {
+    border-left: 0.5px solid #555;
+    border-right: 0.5px solid #555;
+    padding: 0 40px;
+  }
+}
+
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
